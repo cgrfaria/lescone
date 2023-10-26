@@ -1,0 +1,38 @@
+body {
+  background: $backgroundColor;
+  border: 10px solid $borderColor;
+  color: $textColor-primary;
+  @include d(s) {
+    border: none;
+  }
+}
+
+p {
+  @include typo-1(18);
+}
+
+img {
+  display:block;
+  max-width: 100%;
+}
+
+.title {
+  @include typo-1(18);
+  text-transform: uppercase;
+  @include d(s) {
+    margin-bottom: 40px;
+  }
+  
+  &::after {
+    display: block;
+    float: right;
+    content: "";
+    width: 75%;
+    height: 2px;
+    background: $textColor-primary;
+    margin-top: 13px;
+    @include d(m) {
+      width: 60%;
+    }
+  }
+}

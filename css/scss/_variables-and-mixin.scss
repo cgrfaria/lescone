@@ -1,0 +1,38 @@
+// Colors
+$backgroundColor: #edece4;
+$borderColor: #cbc6b9;
+$textColor-primary: #2a2426;
+$textColor-secondary: #988c77;
+$signColor: #1a9b12;
+
+// Fonts
+$font-1: 'PT Mono', monospace;
+$font-2: 'Aref Ruqaa', serif;
+
+@function em($pixel, $context: 16) {
+  @return $pixel / $context + em;
+}
+
+@mixin typo-1($size) {
+  font-family: $font-1;
+  @if $size == 18 {
+    font-size: em(18);
+    line-height: em(30, 18);
+  }
+}
+@mixin typo-2($size) {
+  font-family: $font-2;
+  @if $size == 18 {
+    font-size: em(18);
+    line-height: em(30, 18);
+  }@else if $size == 24 {
+    font-size: em(24);
+    line-height: em(30, 24);
+  }
+}
+
+@mixin box-shadow($shadow...) {
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
